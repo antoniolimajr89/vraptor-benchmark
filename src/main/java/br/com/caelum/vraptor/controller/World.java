@@ -1,5 +1,7 @@
 package br.com.caelum.vraptor.controller;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class World {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy=IDENTITY)
 	private int id;
 	
 	private int randomNumber;
