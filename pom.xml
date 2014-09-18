@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>br.com.caelum</groupId>
 			<artifactId>vraptor</artifactId>
-			<version>${project.version}</version>
+			<version>4.1.0-RC3</version>
 		</dependency>
 
 		<dependency>
@@ -62,16 +62,9 @@
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
-			<!-- uncomment this line on app servers -->
-			<!-- <scope>provided</scope> -->
+			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
