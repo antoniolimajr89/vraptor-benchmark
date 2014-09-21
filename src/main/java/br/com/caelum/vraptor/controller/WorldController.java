@@ -27,7 +27,6 @@ public class WorldController {
 			.from(world).serialize();
 	}
 	
-	
 	@Get("/queries")
 	public void queries(int queries) {
 		
@@ -40,6 +39,25 @@ public class WorldController {
 		for (int i = 0; i < world.length; i++) {
 			world[i] = em.find(World.class, random.nextInt(10000)+1);
 		}
+		
+		result.use(Results.json())
+			.withoutRoot().from(world).serialize();
+	}
+	
+	@Get("/updates")
+	public void updates(int queries) {
+		if (queries < 1) queries = 1;
+		if (queries > 500) queries = 500;
+		
+		Random random = new Random();
+		World[] world = new World[queries];
+		
+		for (int i = 0; i < world.length; i++) {
+			world[i] = em.find(World.class, random.nextInt(10000)+1);
+			world[i].setRandomNumber(random.nextInt(10000)+1);
+		}
+		
+		em.flush();
 		
 		result.use(Results.json())
 			.withoutRoot().from(world).serialize();

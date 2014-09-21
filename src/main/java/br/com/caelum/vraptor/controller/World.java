@@ -24,6 +24,10 @@ public class World {
 		return randomNumber;
 	}
 
+	public void setRandomNumber(int randomNumber) {
+		this.randomNumber = randomNumber;
+	}
+
 	public int getId() {
 		return id;
 	}
